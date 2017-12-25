@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 375 * 50 + 'px';
+    </script>
+    <title>Document</title>
+     <style>
+        .list-cont li{
+            height: 200px;
+            width: 100%;
+            border-bottom: 1px solid #ccc;    
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="city"></div>
+            <div class="title">
+                <span>正在热映</span>/<span>即将上映</span>
+            </div>
+        </header>
+        <section>
+            <div class="swiper-container main">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide iscroll-1">
+                        <div class="swiper-cont" info-down="上拉加载更多...">
+                            <div class="banner swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/1.jpg" alt=""></div>
+                                    <div class="swiper-slide"><img src="img/2.jpg" alt=""></div>
+                                    <div class="swiper-slide"><img src="img/3.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-pagination page"></div>
+                            </div>
+                            <div class="list">
+                                <ul class="list-cont">
+                                     <li>000001</li>
+                                     <li>000002</li>
+                                     <li>000003</li>
+                                     <li>000004</li>
+                                     <li>000005</li>
+                                     <li>000006</li>
+                                     <li>000007</li>
+                                     <li>000008</li>
+                                     <li>000009</li>
+                                     <li>000010</li>  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        22
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            fotter
+        </footer>
+    </div>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        var myswiper = new Swiper('.main');
+        new Swiper('.banner', {
+            pagination: '.page'
+        });
+
+        // function setHtml() {
+        //     $.ajax({
+        //         url: 'data/list.json',
+        //         success: function(d) {
+        //             var str = "";
+        //             $.each(d.list, function(i, v) {
+        //                 str += `
+        //             <li>
+        //                 <dl>
+        //                     <dt><img src="${v.img}" alt=""></dt>
+        //                     <dd>
+        //                         <h1>${v.name}</h1>
+        //                         <h2>${v.info}</h2>
+        //                         <p>${v.fs}</p>
+        //                         <p>${v.add}</p>
+        //                         <p>${v.type}</p>
+        //                     </dd>
+        //                 </dl>
+        //             </li>
+        //             `
+        //             });
+        //             $('.list-cont').append(str);
+        //             myiscroll.refresh();
+        //         }
+        //     });
+        // };
+        // setHtml();
+
+        //实例化iscroll
+        var myiscroll = new IScroll('.iscroll-1', {
+            scrollbars: true,
+            fadeScrollbars: true,
+            probeType: 2
+        });
+        //手指没有松开一直在滑的时候
+        // myiscroll.on('scroll', function() {
+        //     //最大滚动距离
+        //     console.log(this.y);
+        //     if (this.y < myiscroll.maxScrollY - 50) {
+        //         $('.swiper-cont').attr('info-down', '释放加载更多...')
+        //     } else if (this.y < myiscroll.maxScrollY - 20) {
+        //         $('.swiper-cont').attr('info-down', '上拉加载更多...')
+        //     }
+        // });
+        // //手指松开滚动条回到原位
+        // myiscroll.on('scrollEnd', function() {
+        //     $('.swiper-cont').attr('info-down', '上拉加载更多...')
+        // });
+        // //手指松开判断是否加载
+        // $('.swiper-cont')[0].addEventListener('touchend', function() {
+        //     if ($('.swiper-cont').attr('info-down') === "释放加载更多...") {
+        //         setHtml();
+        //     }
+        // }, false);
+    </script>
+</body>
+
+</html>

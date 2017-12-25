@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body,
+html,
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 0.32rem;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  width: 100%;
+  height: 0.8rem;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+  flex: 1;
+  height: 100%;
+}
+
+section .main {
+  height: 100%;
+}
+
+section .main .swiper-cont {
+  position: relative;
+}
+
+section .main .swiper-cont:after {
+  content: attr(info-down);
+  position: absolute;
+  width: 100%;
+  bottom: -0.6rem;
+  left: 0;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+}
+
+section .banner img {
+  width: 100%;
+}
+
+section .banner .page .swiper-pagination-bullet-active {
+  background: #f50;
+}
+
+section .banner .page span {
+  background: #fff;
+  opacity: 1;
+}
